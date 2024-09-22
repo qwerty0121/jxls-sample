@@ -69,6 +69,10 @@ public class JxlsSample {
         }).collect(Collectors.toList());
         data.put("details", details);
 
+        var sheetNames = details.stream().map(detail -> String.format("明細%d", detail.getId()))
+                .collect(Collectors.toList());
+        data.put("sheetNames", sheetNames);
+
         return data;
     }
 
